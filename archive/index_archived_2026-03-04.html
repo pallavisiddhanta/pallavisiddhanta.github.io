@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pallavi Siddhanta — Policy & Communications</title>
+  <meta name="description" content="Building the public narratives that make policy action possible. Policy & Communications professional at City of Chicago and SEWA Bharat.">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --terracotta:       #C97B5A;
+      --terracotta-light: #E8C4A8;
+      --cream:            #FAF7F2;
+      --dark:             #1C1C1C;
+      --mid:              #5A5550;
+      --placeholder:      #EDE8E0;
+      --border:           #D4C9BB;
+      --white:            #FFFFFF;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--cream);
+      color: var(--dark);
+      font-family: Georgia, 'Times New Roman', serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ─── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: center;
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 430px;
+      padding: 16px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease, padding 0.3s ease;
+    }
+
+    nav.scrolled .nav-inner {
+      background: var(--dark);
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .nav-name {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .nav-name:hover { opacity: 1; }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--white); }
+
+    /* ─── HERO ────────────────────────────────────────────── */
+    #hero {
+      background: var(--dark);
+      position: relative;
+    }
+
+    .hero-photo-wrap {
+      width: 100%;
+      max-width: 430px;
+      margin: 0 auto;
+      position: relative;
+      height: 56vh;
+      min-height: 280px;
+      max-height: 420px;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .hero-photo-fade {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60%;
+      background: linear-gradient(to bottom, transparent 0%, var(--dark) 100%);
+    }
+
+    .hero-text {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 0 28px 44px;
+      background: var(--dark);
+    }
+
+    .hero-name {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      font-weight: normal;
+      letter-spacing: 0.06em;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+
+    .hero-positioning {
+      font-family: Georgia, serif;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--terracotta-light);
+      line-height: 1.55;
+      margin-bottom: 20px;
+    }
+
+    .hero-credentials {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.6;
+    }
+
+    /* ─── PHILOSOPHY ──────────────────────────────────────── */
+    #philosophy {
+      background: var(--cream);
+      padding: 44px 28px;
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      opacity: 0.7;
+      margin-bottom: 22px;
+      display: block;
+    }
+
+    .philosophy-quote {
+      font-family: Georgia, serif;
+      font-size: 17px;
+      font-style: italic;
+      color: var(--dark);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .philosophy-bridge {
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      color: var(--terracotta);
+      line-height: 1.7;
+    }
+
+    /* ─── SECTION DIVIDER ─────────────────────────────────── */
+    .section-divider {
+      max-width: 430px;
+      margin: 0 auto;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ─── CAMPAIGNS ───────────────────────────────────────── */
+    #campaigns {
+      background: var(--white);
+    }
+
+    .campaigns-header {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 44px 28px 0;
+    }
+
+    .campaign-card {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 34px 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .campaign-card:last-child { border-bottom: none; }
+
+    .campaign-tag {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mid);
+      opacity: 0.6;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .campaign-title {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: normal;
+      color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+
+    .campaign-client {
+      font-family: 'Courier New', monospace;
+      font-size: 10px;
+      color: var(--mid);
+      opacity: 0.7;
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    /* Image strip */
+    .image-strip {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 22px;
+      height: 88px;
+    }
+
+    .image-strip-slot {
+      flex: 1;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .image-strip-slot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .image-strip-placeholder {
+      flex: 1;
+      border-radius: 4px;
+      background: var(--placeholder);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Linked placeholder (Campaign 02) */
+    a.image-strip-placeholder {
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    a.image-strip-placeholder:hover {
+      background: var(--terracotta-light);
+      border-color: var(--terracotta);
+    }
+
+    a.image-strip-placeholder:hover .placeholder-label {
+      color: var(--terracotta);
+      opacity: 1;
+    }
+
+    .placeholder-label {
+      font-family: 'Courier New', monospace;
+      font-size: 8px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      opacity: 0.6;
+      text-align: center;
+      padding: 4px;
+      line-height: 1.4;
+    }
+
+    /* Story arc */
+    .story-arc { margin-bottom: 20px; }
+
+    .arc-row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0 12px;
+      padding: 10px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .arc-row:last-child { border-bottom: 1px solid var(--border); }
+
+    .arc-label {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--terracotta);
+      padding-top: 3px;
+      line-height: 1.4;
+    }
+
+    .arc-text {
+      font-family: Georgia, serif;
+      font-size: 13px;
+      color: var(--mid);
+      line-height: 1.8;
+    }
+
+    /* Coverage pills */
+    .coverage-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 0.06em;
+      color: var(--mid);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 10px;
+      white-space: nowrap;
+    }
+
+    a.pill {
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    a.pill:hover {
+      border-color: var(--terracotta);
+      color: var(--terracotta);
+    }
+
+    /* ─── PROOF STRIP ─────────────────────────────────────── */
+    #proof {
+      background: var(--dark);
+      padding: 44px 28px;
+    }
+
+    .proof-inner {
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .proof-inner .section-label {
+      color: rgba(255,255,255,0.4);
+      opacity: 1;
+      margin-bottom: 20px;
+    }
+
+    .outlet-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    .outlet-tile {
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      padding: 14px 12px;
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+    }
+
+    a.outlet-tile {
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    a.outlet-tile:hover {
+      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,1);
+    }
+
+    /* ─── ABOUT ───────────────────────────────────────────── */
+    #about {
+      background: var(--cream);
+    }
+
+    .about-inner {
+      max-width: 430px;
+      margin: 0 auto;
+    }
+
+    .about-header {
+      padding: 44px 28px 22px;
+    }
+
+    .about-photo {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .about-text {
+      padding: 22px 28px 44px;
+    }
+
+    .about-name {
+      font-family: 'Courier New', monospace;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .about-bio {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      color: var(--mid);
+      line-height: 1.8;
+      font-style: italic;
+    }
+
+    /* ─── CONTACT ─────────────────────────────────────────── */
+    #contact {
+      background: var(--terracotta);
+    }
+
+    .contact-inner {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 44px 28px;
+    }
+
+    .contact-inner .section-label {
+      color: rgba(255,255,255,0.7);
+      opacity: 1;
+      margin-bottom: 18px;
+    }
+
+    .contact-headline {
+      font-family: Georgia, serif;
+      font-size: 26px;
+      font-weight: normal;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+
+    .contact-subtext {
+      font-family: Georgia, serif;
+      font-size: 14px;
+      font-style: italic;
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      height: 48px;
+      border-radius: 3px;
+      font-family: Georgia, serif;
+      font-size: 14px;
+      text-decoration: none;
+      text-align: center;
+      line-height: 48px;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+
+    .btn:hover { opacity: 0.85; }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--terracotta);
+      border: none;
+    }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid var(--white);
+      margin-top: 10px;
+      line-height: 45px;
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      padding: 20px 28px;
+    }
+
+    .footer-inner {
+      max-width: 430px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .footer-copy {
+      font-family: 'Courier New', monospace;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      color: rgba(255,255,255,0.25);
+      text-transform: uppercase;
+    }
+
+    /* ─── FADE-IN ANIMATION ───────────────────────────────── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav" aria-label="Primary navigation">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-name">PS</a>
+      <ul class="nav-links">
+        <li><a href="#campaigns">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero" aria-label="Introduction">
+    <div class="hero-photo-wrap">
+      <img
+        src="collection/image01.jpg"
+        alt="Pallavi Siddhanta"
+        class="hero-photo"
+      >
+      <div class="hero-photo-fade" aria-hidden="true"></div>
+    </div>
+    <div class="hero-text">
+      <h1 class="hero-name">Pallavi<br>Siddhanta</h1>
+      <p class="hero-positioning">Building the public narratives that make policy action possible.</p>
+      <p class="hero-credentials">Policy &amp; Communications&nbsp;·&nbsp;City of Chicago&nbsp;·&nbsp;SEWA Bharat</p>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY -->
+  <section id="philosophy" aria-label="Philosophy">
+    <span class="section-label fade-up">Belief</span>
+    <blockquote class="philosophy-quote fade-up">
+      "In a world so mired in chaos, I believe that intentional policy action combined with transparent public dialogue will pave the way for a more inclusive, more sustainable future."
+    </blockquote>
+    <p class="philosophy-bridge fade-up">
+      I build the communications infrastructure that makes that possible — from visual identity to earned media to crisis response.
+    </p>
+  </section>
+
+  <div class="section-divider" aria-hidden="true"></div>
+
+  <!-- CAMPAIGNS -->
+  <section id="campaigns" aria-label="Work">
+    <div class="campaigns-header">
+      <span class="section-label fade-up">Work</span>
+    </div>
+
+    <!-- Campaign 01 -->
+    <article class="campaign-card fade-up" aria-label="Campaign 01: Harm Reduction is Public Health">
+      <span class="campaign-tag">Campaign 01 · 2024–2025</span>
+      <h2 class="campaign-title">Harm Reduction<br>is Public Health</h2>
+      <span class="campaign-client">Chicago Department of Public Health</span>
+
+      <div class="image-strip" role="img" aria-label="Campaign 01 visuals">
+        <div class="image-strip-slot">
+          <img src="collection/3e168c1c.jpg" alt="Let's talk about gun safety — campaign visual" loading="lazy">
+        </div>
+        <div class="image-strip-slot">
+          <img src="collection/8276aff5.jpg" alt="Harm reduction awareness graphic" loading="lazy">
+        </div>
+        <div class="image-strip-slot">
+          <img src="collection/c12a241d.jpg" alt="Hope Can Be Learned — OOH billboard" loading="lazy">
+        </div>
+      </div>
+
+      <div class="story-arc">
+        <div class="arc-row">
+          <span class="arc-label">Challenge</span>
+          <p class="arc-text">Chicago needed to shift public narrative around harm reduction — a politically contested approach — while building durable infrastructure for ongoing seasonal crisis response.</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Approach</span>
+          <p class="arc-text">Built the full communications stack: visual identity for arts therapy clinics at City-run mental health facilities; billboard campaigns using City-owned advertising assets; proactive and reactive media strategy for opioid spike events including Health Alert Network (HAN) response.</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Outcome</span>
+          <p class="arc-text">Chicago opioid overdose deaths fell (continued drop from 2023). $18M in Illinois funding secured for overdose prevention sites. National and local media coverage.</p>
+        </div>
+      </div>
+
+      <div class="coverage-pills" aria-label="Media coverage">
+        <a class="pill" href="https://www.chicagotribune.com/2024/10/03/chicago-sees-steep-drop-in-number-of-deaths-tied-to-opioid-overdoses/" target="_blank" rel="noopener noreferrer">Chicago Tribune</a>
+        <a class="pill" href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" target="_blank" rel="noopener noreferrer">The Guardian</a>
+        <a class="pill" href="https://www.chicagobusiness.com/health-care/chicagos-opioid-efforts-show-early-promise" target="_blank" rel="noopener noreferrer">Crain's</a>
+        <a class="pill" href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" target="_blank" rel="noopener noreferrer">NBC</a>
+        <a class="pill" href="https://abc7chicago.com/post/increase-opioid-drug-overdose-incidents-during-hot-chicago-weather-triggers-citys-spike-alert-system/16839955/" target="_blank" rel="noopener noreferrer">ABC7</a>
+        <a class="pill" href="https://chicago.suntimes.com/the-watchdogs/2025/01/30/illinois-overdose-prevention-sites-18-million-dollars" target="_blank" rel="noopener noreferrer">Sun-Times</a>
+        <a class="pill" href="https://www.fox32chicago.com/video/1659027" target="_blank" rel="noopener noreferrer">Fox32</a>
+      </div>
+    </article>
+
+    <!-- Campaign 02 -->
+    <article class="campaign-card fade-up" aria-label="Campaign 02: Violence Prevention Chicago 2025">
+      <span class="campaign-tag">Campaign 02 · 2025</span>
+      <h2 class="campaign-title">Violence Prevention,<br>Chicago 2025</h2>
+      <span class="campaign-client">Chicago Department of Public Health</span>
+
+      <div class="image-strip" role="img" aria-label="Campaign 02 press materials">
+        <a class="image-strip-placeholder" href="https://www.chicago.gov/city/en/depts/cdph/provdrs/health_protection_and_response/news/2025/may/cdph-press-release-05-23-2025-summer-activations.html" target="_blank" rel="noopener noreferrer" aria-label="Read press release: Summer Activations">
+          <span class="placeholder-label">Press<br>Release ↗</span>
+        </a>
+        <a class="image-strip-placeholder" href="https://www.chicago.gov/city/en/depts/cdph/provdrs/health_protection_and_response/news/2025/jul/cdph-weekly-media-brief-07-10-2025.html" target="_blank" rel="noopener noreferrer" aria-label="Read CDPH weekly media brief">
+          <span class="placeholder-label">Media<br>Brief ↗</span>
+        </a>
+        <a class="image-strip-placeholder" href="https://www.chicago.gov/city/en/depts/cdph/provdrs/health_protection_and_response/news/2025/apr/cdph-press-release-04-14-2025-gasc-comm-violence-intervention.html" target="_blank" rel="noopener noreferrer" aria-label="Read CDPH ICS plan: Community Violence Intervention">
+          <span class="placeholder-label">ICS<br>Plan ↗</span>
+        </a>
+      </div>
+
+      <div class="story-arc">
+        <div class="arc-row">
+          <span class="arc-label">Challenge</span>
+          <p class="arc-text">Chicago recorded a historic drop in homicides and nonfatal shootings in 2025. The story needed telling — carefully, credibly, without overpromising — while simultaneously managing reactive opioid crisis messaging during summer heatwaves.</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Approach</span>
+          <p class="arc-text">Designed a proactive media plan for Summer 2025 ICS covering both violence prevention and opioids. Pitched the July 4th violence reduction story to The Trace. Managed transparent messaging around opioid spike alerts (2 SDs over mean).</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Outcome</span>
+          <p class="arc-text">33% reduction in violence over July 4th weekend reported nationally. Opioid spike handled transparently. Federal funding threat elevated to national conversation.</p>
+        </div>
+      </div>
+
+      <div class="coverage-pills" aria-label="Media coverage">
+        <a class="pill" href="https://www.thetrace.org/2025/07/chicago-shootings-july-fourth-holiday/" target="_blank" rel="noopener noreferrer">The Trace</a>
+        <a class="pill" href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" target="_blank" rel="noopener noreferrer">NBC Universal</a>
+        <a class="pill" href="https://chicago.suntimes.com/health/2025/07/25/mental-health-crisis-911-calls-care-programec-crisis-assistance-response-engagement-medill-investigative-lab-chicago-mindsite-news" target="_blank" rel="noopener noreferrer">Sun-Times</a>
+        <a class="pill" href="https://southsideweekly.com/expiring-federal-funds-threaten-chicagos-alternative-crisis-response-effort/" target="_blank" rel="noopener noreferrer">South Side Weekly</a>
+        <a class="pill" href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" target="_blank" rel="noopener noreferrer">The Guardian</a>
+      </div>
+    </article>
+
+    <!-- Campaign 03 -->
+    <article class="campaign-card fade-up" aria-label="Campaign 03: Centering Women Workers During COVID-19">
+      <span class="campaign-tag">Campaign 03 · 2020–2021</span>
+      <h2 class="campaign-title">Centering Women Workers<br>During COVID-19</h2>
+      <span class="campaign-client">SEWA Bharat, India</span>
+
+      <div class="image-strip" role="img" aria-label="Campaign 03 visuals">
+        <div class="image-strip-slot">
+          <img src="collection/60c6dd3e.jpg" alt="Women in a computer classroom, SEWA Bharat" loading="lazy">
+        </div>
+        <div class="image-strip-slot">
+          <img src="collection/06cc814e.jpg" alt="COVID-19's impact on Grassroots Social Enterprises — SEWA research" loading="lazy">
+        </div>
+        <div class="image-strip-slot">
+          <img src="collection/c052e328.jpg" alt="Gendered precarity of the lockdown — SEWA research finding" loading="lazy">
+        </div>
+      </div>
+
+      <div class="story-arc">
+        <div class="arc-row">
+          <span class="arc-label">Challenge</span>
+          <p class="arc-text">During COVID-19, India's informal women workers — domestic workers, textile recyclers, street vendors — were invisible in the policy conversation. Their economic and social needs were unaddressed in mainstream media.</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Approach</span>
+          <p class="arc-text">Built a grassroots communications campaign centering workers' voices. Produced social media content and placed stories with feminist media, development sector publications, and national newspapers in India.</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Outcome</span>
+          <p class="arc-text">Coverage in national and sector-leading publications elevated policy visibility for domestic workers and textile recyclers. Stories published in Feminism in India, Times of India, and India Development Review.</p>
+        </div>
+      </div>
+
+      <div class="coverage-pills" aria-label="Media coverage">
+        <a class="pill" href="https://timesofindia.indiatimes.com/women-textile-recyclers-even-reuse-tiny-fragments-sustaining-ecology-and-economy/articleshow/84483375.cms" target="_blank" rel="noopener noreferrer">Times of India</a>
+        <a class="pill" href="https://feminisminindia.com/2021/04/08/women-collective-informal-sector/" target="_blank" rel="noopener noreferrer">Feminism in India</a>
+        <a class="pill" href="https://idronline.org/article/rights/securing-economic-and-social-rights-for-domestic-workers/" target="_blank" rel="noopener noreferrer">India Dev Review</a>
+      </div>
+    </article>
+
+    <!-- Campaign 04 -->
+    <article class="campaign-card fade-up" aria-label="Campaign 04: The SunPedal Ride">
+      <span class="campaign-tag">Earlier Work · 2019</span>
+      <h2 class="campaign-title">The SunPedal Ride</h2>
+      <span class="campaign-client">Clean Energy Communications · India</span>
+
+      <div class="image-strip" role="img" aria-label="SunPedal Ride coverage">
+        <div class="image-strip-placeholder">
+          <span class="placeholder-label">Solar<br>Auto</span>
+        </div>
+        <div class="image-strip-placeholder">
+          <span class="placeholder-label">60 Cities<br>60 Days</span>
+        </div>
+        <div class="image-strip-placeholder">
+          <span class="placeholder-label">Clean<br>Energy</span>
+        </div>
+      </div>
+
+      <div class="story-arc">
+        <div class="arc-row">
+          <span class="arc-label">Challenge</span>
+          <p class="arc-text">A 60-city, 60-day journey across India on a solar-powered auto-rickshaw needed a sustained media strategy — placing a clean energy story in national and specialist outlets across two months and multiple states.</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Approach</span>
+          <p class="arc-text">Pitched and placed stories across English-language national press, regional outlets, and clean energy publications, building momentum coverage as the route progressed across the Golden Quadrilateral.</p>
+        </div>
+        <div class="arc-row">
+          <span class="arc-label">Outcome</span>
+          <p class="arc-text">Coverage in 8+ publications spanning national dailies, development media, and international business schools — reaching audiences in India, Europe, and the clean energy sector.</p>
+        </div>
+      </div>
+
+      <div class="coverage-pills" aria-label="Media coverage">
+        <a class="pill" href="https://www.thehindu.com/life-and-style/travel/60-cities-in-60-days-in-a-solar-powered-auto/article28707202.ece" target="_blank" rel="noopener noreferrer">The Hindu</a>
+        <a class="pill" href="https://www.newindianexpress.com/cities/delhi/2019/Jul/01/iitian-pedal-towards-a-clean-energy-practice-1997733.html" target="_blank" rel="noopener noreferrer">New Indian Express</a>
+        <a class="pill" href="https://yourstory.com/socialstory/2019/07/iit-bombay-alumnus-solar-powered-auto-rickshaw" target="_blank" rel="noopener noreferrer">YourStory</a>
+        <a class="pill" href="https://www.telegraphindia.com/jharkhand/green-drive-in-solar-auto/cid/1693799" target="_blank" rel="noopener noreferrer">Telegraph India</a>
+        <a class="pill" href="https://www.hec.edu/en/school/news/sasi-student-aims-revolutionize-india-s-energy" target="_blank" rel="noopener noreferrer">HEC Paris</a>
+        <a class="pill" href="https://www.edexlive.com/news/green-ride-this-group-is-on-a-mission-to-travel-across-the-country-on-a-solar-powered-auto-rickshaw-6775.html" target="_blank" rel="noopener noreferrer">EdexLive</a>
+      </div>
+    </article>
+  </section>
+
+  <!-- PROOF STRIP -->
+  <section id="proof" aria-label="Media appearances">
+    <div class="proof-inner">
+      <span class="section-label">As seen in</span>
+      <div class="outlet-grid fade-up">
+        <a class="outlet-tile" href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" target="_blank" rel="noopener noreferrer">The Guardian</a>
+        <a class="outlet-tile" href="https://www.chicagotribune.com/2024/10/03/chicago-sees-steep-drop-in-number-of-deaths-tied-to-opioid-overdoses/" target="_blank" rel="noopener noreferrer">Chicago Tribune</a>
+        <a class="outlet-tile" href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" target="_blank" rel="noopener noreferrer">NBC Universal</a>
+        <a class="outlet-tile" href="https://www.chicagobusiness.com/health-care/chicagos-opioid-efforts-show-early-promise" target="_blank" rel="noopener noreferrer">Crain's Chicago</a>
+        <a class="outlet-tile" href="https://abc7chicago.com/post/increase-opioid-drug-overdose-incidents-during-hot-chicago-weather-triggers-citys-spike-alert-system/16839955/" target="_blank" rel="noopener noreferrer">ABC7</a>
+        <a class="outlet-tile" href="https://www.thetrace.org/2025/07/chicago-shootings-july-fourth-holiday/" target="_blank" rel="noopener noreferrer">The Trace</a>
+        <a class="outlet-tile" href="https://timesofindia.indiatimes.com/women-textile-recyclers-even-reuse-tiny-fragments-sustaining-ecology-and-economy/articleshow/84483375.cms" target="_blank" rel="noopener noreferrer">Times of India</a>
+        <a class="outlet-tile" href="https://chicago.suntimes.com/the-watchdogs/2025/01/30/illinois-overdose-prevention-sites-18-million-dollars" target="_blank" rel="noopener noreferrer">Sun-Times</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" aria-label="About Pallavi">
+    <div class="about-inner">
+      <div class="about-header">
+        <span class="section-label fade-up">About</span>
+      </div>
+      <img
+        src="collection/image01.jpg"
+        alt="Pallavi Siddhanta"
+        class="about-photo"
+        loading="lazy"
+      >
+      <div class="about-text fade-up">
+        <span class="about-name">Pallavi Siddhanta</span>
+        <p class="about-bio">[ Pallavi's bio — 2–3 sentences in her own voice, coming soon. ]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" aria-label="Contact">
+    <div class="contact-inner">
+      <span class="section-label">Get in touch</span>
+      <h3 class="contact-headline">Let's work together.</h3>
+      <p class="contact-subtext">Open to collaborations, consulting, and conversations.</p>
+      <a href="mailto:hello@pallavisiddhanta.com" class="btn btn-primary">Send an email</a>
+      <a href="https://www.linkedin.com/in/psiddhanta/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <p class="footer-copy">&copy; 2026 Pallavi Siddhanta</p>
+    </div>
+  </footer>
+
+  <script>
+    // Nav: transparent → dark on scroll
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    }, { passive: true });
+
+    // Fade-up on scroll
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
