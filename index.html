@@ -12,14 +12,24 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --terracotta:       #C97B5A;
-      --terracotta-light: #E8C4A8;
-      --cream:            #FAF7F2;
-      --dark:             #1C1C1C;
-      --mid:              #5A5550;
-      --placeholder:      #EDE8E0;
-      --border:           #D4C9BB;
-      --white:            #FFFFFF;
+      /* Ivy & Cream palette — CR-012 */
+      --bg:          #f2ede4;
+      --surface:     #ffffff;
+      --ink:         #141410;
+      --ink-mid:     #3a3830;
+      --ink-light:   #7a9a6a;
+      --accent:      #2d4a2d;
+      --accent-mid:  #7a9a6a;
+      --border:      #e8e2d8;
+      --border-mid:  #c8d4c0;
+      /* Legacy token aliases */
+      --terracotta:       #2d4a2d;
+      --terracotta-light: #7a9a6a;
+      --cream:            #f2ede4;
+      --dark:             #141410;
+      --mid:              #3a3830;
+      --placeholder:      #e8e2d8;
+      --white:            #ffffff;
     }
 
     html { scroll-behavior: smooth; }
@@ -62,7 +72,7 @@
       font-size: 0.6875rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
+      color: var(--accent);
       text-decoration: none;
       transition: opacity 0.2s;
     }
@@ -80,12 +90,12 @@
       font-size: 0.8125rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
+      color: var(--accent);
       text-decoration: none;
       transition: color 0.2s;
     }
 
-    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover { color: var(--ink); }
 
     /* ─── HERO ────────────────────────────────────────────── */
     #hero {
@@ -167,8 +177,7 @@
       font-size: 0.625rem;
       letter-spacing: 0.25em;
       text-transform: uppercase;
-      color: var(--mid);
-      opacity: 0.7;
+      color: var(--accent);
       margin-bottom: 22px;
       display: block;
     }
@@ -177,9 +186,11 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(1.1rem, 3vw, 1.35rem);
       font-style: italic;
-      color: var(--dark);
+      color: var(--ink-mid);
       line-height: 1.55;
       margin-bottom: 20px;
+      border-left: 3px solid var(--accent);
+      padding-left: 16px;
     }
 
     .philosophy-bridge {
@@ -213,6 +224,7 @@
       margin: 0 auto;
       padding: 34px 28px;
       border-bottom: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
     }
 
     .campaign-card:last-child { border-bottom: none; }
@@ -255,8 +267,7 @@
     .campaign-client {
       font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
       font-size: 10px;
-      color: var(--mid);
-      opacity: 0.7;
+      color: var(--ink-light);
       margin-bottom: 18px;
       display: block;
     }
@@ -404,21 +415,23 @@
       font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
       font-size: 9px;
       letter-spacing: 0.06em;
-      color: var(--mid);
-      border: 1px solid var(--border);
+      color: var(--accent);
+      border: 1px solid var(--border-mid);
       border-radius: 20px;
       padding: 4px 10px;
       white-space: nowrap;
+      background: transparent;
     }
 
     a.pill {
       text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
+      transition: background 0.2s, border-color 0.2s, color 0.2s;
     }
 
     a.pill:hover {
-      border-color: var(--terracotta);
-      color: var(--terracotta);
+      background: var(--accent);
+      color: var(--surface);
+      border-color: var(--accent);
     }
 
     /* ─── PROOF STRIP ─────────────────────────────────────── */
@@ -512,7 +525,8 @@
 
     /* ─── CONTACT ─────────────────────────────────────────── */
     #contact {
-      background: var(--terracotta);
+      background: var(--surface);
+      color: var(--ink-mid);
     }
 
     .contact-inner {
@@ -522,8 +536,7 @@
     }
 
     .contact-inner .section-label {
-      color: rgba(255,255,255,0.7);
-      opacity: 1;
+      color: var(--accent);
       margin-bottom: 18px;
     }
 
@@ -531,7 +544,7 @@
       font-family: 'Playfair Display', Georgia, serif;
       font-size: clamp(1.6rem, 4vw, 2.2rem);
       font-weight: 700;
-      color: var(--white);
+      color: var(--ink);
       line-height: 1.2;
       margin-bottom: 10px;
     }
@@ -541,7 +554,7 @@
       font-weight: 300;
       font-size: 14px;
       font-style: italic;
-      color: rgba(255,255,255,0.85);
+      color: var(--ink-mid);
       line-height: 1.6;
       margin-bottom: 28px;
     }
@@ -563,15 +576,15 @@
     .btn:hover { opacity: 0.85; }
 
     .btn-primary {
-      background: var(--white);
-      color: var(--terracotta);
+      background: var(--accent);
+      color: var(--surface);
       border: none;
     }
 
     .btn-secondary {
       background: transparent;
-      color: var(--white);
-      border: 1.5px solid var(--white);
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
       margin-top: 10px;
       line-height: 45px;
     }
@@ -596,6 +609,122 @@
       text-transform: uppercase;
     }
 
+    /* ─── RESPONSIVE — CR-010 ────────────────────────────── */
+    /* Mobile-first: these rules only add/override. Never touch mobile. */
+
+    /* Hide full name on mobile, short on desktop */
+    .nav-name-full { display: none; }
+
+    @media (min-width: 768px) {
+      /* NAV */
+      .nav-inner {
+        max-width: 1100px;
+        gap: 40px;
+      }
+      .nav-name-short { display: none; }
+      .nav-name-full  { display: inline; }
+      .nav-links { gap: 32px; }
+
+      /* HERO — side-by-side */
+      #hero {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        min-height: 80vh;
+      }
+      .hero-photo-wrap {
+        flex: 0 0 50%;
+        max-width: none;
+        max-height: none;
+        height: auto;
+        min-height: 80vh;
+        margin: 0;
+      }
+      .hero-photo-fade {
+        background: linear-gradient(to right, transparent 70%, var(--dark) 100%);
+      }
+      .hero-text {
+        flex: 1;
+        max-width: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 60px 52px 60px 48px;
+      }
+
+      /* PHILOSOPHY */
+      #philosophy {
+        max-width: 680px;
+        padding: 60px 40px;
+      }
+
+      /* SECTION DIVIDER */
+      .section-divider { max-width: 900px; }
+
+      /* CAMPAIGNS */
+      .campaigns-header {
+        max-width: 900px;
+        padding: 60px 40px 0;
+      }
+      .campaign-card {
+        max-width: 900px;
+        padding: 40px 40px;
+      }
+      .image-strip-slot,
+      .image-strip-placeholder {
+        width: clamp(160px, 22vw, 280px);
+      }
+      .campaign-card--earlier .image-strip-slot,
+      .campaign-card--earlier .image-strip-placeholder {
+        width: clamp(120px, 18vw, 220px);
+      }
+
+      /* PROOF STRIP */
+      .proof-inner { max-width: 900px; }
+      .outlet-grid { grid-template-columns: repeat(4, 1fr); }
+
+      /* ABOUT — text-only layout (CR-011) */
+      .about-inner {
+        max-width: 900px;
+      }
+      .about-header {
+        padding: 44px 48px 12px;
+      }
+      .about-text {
+        padding: 0 48px 44px;
+      }
+
+      /* CONTACT */
+      .contact-inner { max-width: 680px; }
+      .contact-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 14px;
+      }
+      .btn {
+        display: inline-block;
+        width: auto;
+        min-width: 220px;
+      }
+      .btn-secondary { margin-top: 0; line-height: 45px; }
+
+      /* FOOTER */
+      .footer-inner { max-width: 1100px; }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-text {
+        padding: 80px 64px 80px 64px;
+      }
+      .hero-name {
+        font-size: clamp(3rem, 3.6vw, 4.5rem);
+      }
+      .philosophy-quote {
+        font-size: clamp(1.2rem, 1.6vw, 1.55rem);
+      }
+    }
+
     /* ─── FADE-IN ANIMATION ───────────────────────────────── */
     .fade-up {
       opacity: 0;
@@ -615,7 +744,7 @@
   <!-- NAV -->
   <nav id="main-nav" aria-label="Primary navigation">
     <div class="nav-inner">
-      <a href="#hero" class="nav-name">PS</a>
+      <a href="#hero" class="nav-name"><span class="nav-name-short">PS</span><span class="nav-name-full">Pallavi Siddhanta</span></a>
       <ul class="nav-links">
         <li><a href="#campaigns">Work</a></li>
         <li><a href="#about">About</a></li>
@@ -847,15 +976,9 @@
       <div class="about-header">
         <span class="section-label fade-up">About</span>
       </div>
-      <img
-        src="collection/image01.jpg"
-        alt="Pallavi Siddhanta"
-        class="about-photo"
-        loading="lazy"
-      >
       <div class="about-text fade-up">
         <span class="about-name">Pallavi Siddhanta</span>
-        <p class="about-bio">[ Pallavi's bio — 2–3 sentences in her own voice, coming soon. ]</p>
+        <p class="about-bio">Hello! I'm Pallavi, a communications programming professional from India, who now calls Chicago home. I live and breathe communications to make public policy accessible to the masses. Through my work, I aim to ensure that communities are well-informed, cared for, and can access services equitably.</p>
       </div>
     </div>
   </section>
@@ -866,8 +989,10 @@
       <span class="section-label">Get in touch</span>
       <h3 class="contact-headline">Let's work together.</h3>
       <p class="contact-subtext">Open to collaborations, consulting, and conversations.</p>
-      <a href="mailto:psiddhanta@outlook.com" class="btn btn-primary">Send an email</a>
-      <a href="https://www.linkedin.com/in/psiddhanta/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      <div class="contact-buttons">
+        <a href="mailto:psiddhanta@outlook.com" class="btn btn-primary">Send an email</a>
+        <a href="https://www.linkedin.com/in/psiddhanta/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+      </div>
     </div>
   </section>
 
