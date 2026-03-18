@@ -1,1044 +1,929 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pallavi Siddhanta — Policy & Communications</title>
-  <meta name="description" content="Building the public narratives that make policy action possible. Policy & Communications professional at City of Chicago and SEWA Bharat.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      /* Ivy & Cream palette — CR-012 */
-      --bg:          #f2ede4;
-      --surface:     #ffffff;
-      --ink:         #141410;
-      --ink-mid:     #3a3830;
-      --ink-light:   #7a9a6a;
-      --accent:      #2d4a2d;
-      --accent-mid:  #7a9a6a;
-      --border:      #e8e2d8;
-      --border-mid:  #c8d4c0;
-      /* Legacy token aliases */
-      --terracotta:       #2d4a2d;
-      --terracotta-light: #7a9a6a;
-      --cream:            #f2ede4;
-      --dark:             #141410;
-      --mid:              #3a3830;
-      --placeholder:      #e8e2d8;
-      --white:            #ffffff;
-    }
-
-    /* ── Global typography ── */
-    h1, h2, h3, h4 {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-optical-sizing: auto;
-    }
-
-    body, p, li, a, nav, label, button, figcaption {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-    }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--cream);
-      color: var(--dark);
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* ─── NAV ─────────────────────────────────────────────── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: center;
-    }
-
-    .nav-inner {
-      width: 100%;
-      max-width: 430px;
-      padding: 16px 28px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: background 0.3s ease, padding 0.3s ease;
-    }
-
-    nav.scrolled .nav-inner {
-      background: var(--dark);
-      padding-top: 12px;
-      padding-bottom: 12px;
-    }
-
-    .nav-name {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 0.6875rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-
-    .nav-name:hover { opacity: 1; }
-
-    .nav-links {
-      display: flex;
-      gap: 20px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 0.8125rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .nav-links a:hover { color: var(--ink); }
-
-    /* ─── HERO ────────────────────────────────────────────── */
-    #hero {
-      background: var(--dark);
-      position: relative;
-    }
-
-    .hero-photo-wrap {
-      width: 100%;
-      max-width: 430px;
-      margin: 0 auto;
-      position: relative;
-      height: 56vh;
-      min-height: 280px;
-      max-height: 420px;
-    }
-
-    .hero-photo {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    .hero-photo-fade {
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 60%;
-      background: linear-gradient(to bottom, transparent 0%, var(--dark) 100%);
-    }
-
-    .hero-text {
-      max-width: 430px;
-      margin: 0 auto;
-      padding: 0 28px 44px;
-      background: var(--dark);
-    }
-
-    .hero-name {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-optical-sizing: auto;
-      font-size: clamp(2.4rem, 5vw, 3.6rem);
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      line-height: 1.05;
-      color: var(--white);
-      margin-bottom: 14px;
-    }
-
-    .hero-positioning {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 15px;
-      font-style: italic;
-      color: var(--terracotta-light);
-      line-height: 1.55;
-      margin-bottom: 20px;
-    }
-
-    .hero-credentials {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 0.6875rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.6;
-    }
-
-    /* ─── PHILOSOPHY ──────────────────────────────────────── */
-    #philosophy {
-      background: var(--cream);
-      padding: 44px 28px;
-      max-width: 430px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-weight: 500;
-      font-size: 0.625rem;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 22px;
-      display: block;
-    }
-
-    .philosophy-quote {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-optical-sizing: auto;
-      font-weight: 300;
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      font-style: italic;
-      color: var(--ink-mid);
-      line-height: 1.6;
-      margin-bottom: 20px;
-      border-left: 3px solid var(--accent);
-      padding-left: 16px;
-    }
-
-    .philosophy-bridge {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 12px;
-      color: var(--terracotta);
-      line-height: 1.7;
-    }
-
-    /* ─── SECTION DIVIDER ─────────────────────────────────── */
-    .section-divider {
-      max-width: 430px;
-      margin: 0 auto;
-      height: 1px;
-      background: var(--border);
-    }
-
-    /* ─── CAMPAIGNS ───────────────────────────────────────── */
-    #campaigns {
-      background: var(--white);
-    }
-
-    .campaigns-header {
-      max-width: 430px;
-      margin: 0 auto;
-      padding: 44px 28px 0;
-    }
-
-    .campaign-card {
-      max-width: 430px;
-      margin: 0 auto;
-      padding: 34px 28px;
-      border-bottom: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-    }
-
-    .campaign-card:last-child { border-bottom: none; }
-
-    /* Earlier Work card — lighter visual weight per CR-006 */
-    .campaign-card--earlier {
-      padding-top: 24px;
-      padding-bottom: 24px;
-    }
-
-    .campaign-card--earlier .campaign-title {
-      font-size: 18px;
-    }
-
-    .campaign-card--earlier .image-strip-slot,
-    .campaign-card--earlier .image-strip-placeholder {
-      width: clamp(120px, 34vw, 160px);
-    }
-
-    .campaign-tag {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 0.6875rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--mid);
-      opacity: 0.6;
-      margin-bottom: 10px;
-      display: block;
-    }
-
-    .campaign-title {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-optical-sizing: auto;
-      font-size: clamp(1.6rem, 3vw, 2.2rem);
-      font-weight: 600;
-      letter-spacing: -0.01em;
-      color: var(--dark);
-      line-height: 1.1;
-      margin-bottom: 8px;
-    }
-
-    .campaign-client {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 10px;
-      color: var(--ink-light);
-      margin-bottom: 18px;
-      display: block;
-    }
-
-    /* Image strip — horizontal scroll, fixed aspect ratio tiles */
-    .image-strip {
-      display: flex;
-      gap: 6px;
-      margin-bottom: 22px;
-      overflow-x: auto;
-      overflow-y: hidden;
-      scroll-snap-type: x mandatory;
-      -webkit-overflow-scrolling: touch;
-      /* hide scrollbar */
-      scrollbar-width: none;
-      -ms-overflow-style: none;
-    }
-
-    .image-strip::-webkit-scrollbar {
-      display: none;
-    }
-
-    .image-strip-slot {
-      flex: 0 0 auto;
-      width: clamp(160px, 44vw, 210px);
-      aspect-ratio: 4 / 3;
-      border-radius: 4px;
-      overflow: hidden;
-      position: relative;
-      scroll-snap-align: start;
-    }
-
-    .image-strip-slot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      display: block;
-      transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-
-    .image-strip-slot:hover img {
-      transform: scale(1.05);
-    }
-
-    .image-strip-placeholder {
-      flex: 0 0 auto;
-      width: clamp(160px, 44vw, 210px);
-      aspect-ratio: 4 / 3;
-      border-radius: 4px;
-      background: var(--placeholder);
-      border: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      scroll-snap-align: start;
-    }
-
-    /* Linked placeholder (Campaign 02) */
-    a.image-strip-placeholder {
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s;
-    }
-
-    a.image-strip-placeholder:hover {
-      background: var(--terracotta-light);
-      border-color: var(--terracotta);
-    }
-
-    a.image-strip-placeholder:hover .placeholder-label {
-      color: var(--terracotta);
-      opacity: 1;
-    }
-
-    .placeholder-label {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 8px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid);
-      opacity: 0.6;
-      text-align: center;
-      padding: 4px;
-      line-height: 1.4;
-    }
-
-    /* Campaign narrative (prose format) */
-    .campaign-narrative {
-      margin-bottom: 20px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 16px 0;
-    }
-
-    .campaign-narrative p {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      color: var(--mid);
-      line-height: 1.7;
-      margin-bottom: 14px;
-    }
-
-    .campaign-narrative p:last-child { margin-bottom: 0; }
-
-    /* Story arc */
-    .story-arc { margin-bottom: 20px; }
-
-    .arc-row {
-      display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 0 12px;
-      padding: 10px 0;
-      border-top: 1px solid var(--border);
-    }
-
-    .arc-row:last-child { border-bottom: 1px solid var(--border); }
-
-    .arc-label {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 0.6875rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--terracotta);
-      padding-top: 3px;
-      line-height: 1.4;
-    }
-
-    .arc-text {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-weight: 300;
-      font-size: 1rem;
-      color: var(--mid);
-      line-height: 1.8;
-    }
-
-    /* Coverage pills */
-    .coverage-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
-
-    .pill {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 9px;
-      letter-spacing: 0.06em;
-      color: var(--accent);
-      border: 1px solid var(--border-mid);
-      border-radius: 20px;
-      padding: 4px 10px;
-      white-space: nowrap;
-      background: transparent;
-    }
-
-    a.pill {
-      text-decoration: none;
-      transition: background 0.2s, border-color 0.2s, color 0.2s;
-    }
-
-    a.pill:hover {
-      background: var(--accent);
-      color: var(--surface);
-      border-color: var(--accent);
-    }
-
-    /* ─── PROOF STRIP ─────────────────────────────────────── */
-    #proof {
-      background: var(--dark);
-      padding: 44px 28px;
-    }
-
-    .proof-inner {
-      max-width: 430px;
-      margin: 0 auto;
-    }
-
-    .proof-inner .section-label {
-      color: rgba(255,255,255,0.4);
-      opacity: 1;
-      margin-bottom: 20px;
-    }
-
-    .outlet-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-
-    .outlet-tile {
-      background: rgba(255,255,255,0.06);
-      border-radius: 4px;
-      padding: 14px 12px;
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: rgba(255,255,255,0.7);
-      text-align: center;
-    }
-
-    a.outlet-tile {
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-
-    a.outlet-tile:hover {
-      background: rgba(255,255,255,0.12);
-      color: rgba(255,255,255,1);
-    }
-
-    /* ─── ABOUT ───────────────────────────────────────────── */
-    #about {
-      background: var(--cream);
-    }
-
-    .about-inner {
-      max-width: 430px;
-      margin: 0 auto;
-    }
-
-    .about-header {
-      padding: 44px 28px 22px;
-    }
-
-    .about-photo {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      object-position: center top;
-      display: block;
-    }
-
-    .about-text {
-      padding: 22px 28px 44px;
-    }
-
-    .about-name {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 0.6875rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--mid);
-      margin-bottom: 14px;
-      display: block;
-    }
-
-    .about-bio {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-weight: 300;
-      font-size: 14px;
-      color: var(--mid);
-      line-height: 1.8;
-      font-style: italic;
-    }
-
-    /* ─── CONTACT ─────────────────────────────────────────── */
-    #contact {
-      background: var(--surface);
-      color: var(--ink-mid);
-    }
-
-    .contact-inner {
-      max-width: 430px;
-      margin: 0 auto;
-      padding: 44px 28px;
-    }
-
-    .contact-inner .section-label {
-      color: var(--accent);
-      margin-bottom: 18px;
-    }
-
-    .contact-headline {
-      font-family: 'Source Serif 4', Georgia, serif;
-      font-optical-sizing: auto;
-      font-size: 1.3rem;
-      font-weight: 400;
-      color: var(--ink);
-      line-height: 1.2;
-      margin-bottom: 10px;
-    }
-
-    .contact-subtext {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-weight: 300;
-      font-size: 14px;
-      font-style: italic;
-      color: var(--ink-mid);
-      line-height: 1.6;
-      margin-bottom: 28px;
-    }
-
-    .btn {
-      display: block;
-      width: 100%;
-      height: 48px;
-      border-radius: 3px;
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 14px;
-      text-decoration: none;
-      text-align: center;
-      line-height: 48px;
-      cursor: pointer;
-      transition: opacity 0.2s;
-    }
-
-    .btn:hover { opacity: 0.85; }
-
-    .btn-primary {
-      background: var(--accent);
-      color: var(--surface);
-      border: none;
-    }
-
-    .btn-secondary {
-      background: transparent;
-      color: var(--accent);
-      border: 1.5px solid var(--accent);
-      margin-top: 10px;
-      line-height: 45px;
-    }
-
-    /* ─── FOOTER ──────────────────────────────────────────── */
-    footer {
-      background: var(--dark);
-      padding: 20px 28px;
-    }
-
-    .footer-inner {
-      max-width: 430px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    .footer-copy {
-      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
-      font-size: 9px;
-      letter-spacing: 0.1em;
-      color: rgba(255,255,255,0.25);
-      text-transform: uppercase;
-    }
-
-    /* ─── RESPONSIVE — CR-010 ────────────────────────────── */
-    /* Mobile-first: these rules only add/override. Never touch mobile. */
-
-    /* Hide full name on mobile, short on desktop */
-    .nav-name-full { display: none; }
-
-    @media (min-width: 768px) {
-      /* NAV */
-      .nav-inner {
-        max-width: 1100px;
-        gap: 40px;
-      }
-      .nav-name-short { display: none; }
-      .nav-name-full  { display: inline; }
-      .nav-links { gap: 32px; }
-
-      /* HERO — side-by-side */
-      #hero {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        min-height: 80vh;
-      }
-      .hero-photo-wrap {
-        flex: 0 0 50%;
-        max-width: none;
-        max-height: none;
-        height: auto;
-        min-height: 80vh;
-        margin: 0;
-      }
-      .hero-photo-fade {
-        background: linear-gradient(to right, transparent 70%, var(--dark) 100%);
-      }
-      .hero-text {
-        flex: 1;
-        max-width: none;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 60px 52px 60px 48px;
-      }
-
-      /* PHILOSOPHY */
-      #philosophy {
-        max-width: 680px;
-        padding: 60px 40px;
-      }
-
-      /* SECTION DIVIDER */
-      .section-divider { max-width: 900px; }
-
-      /* CAMPAIGNS */
-      .campaigns-header {
-        max-width: 900px;
-        padding: 60px 40px 0;
-      }
-      .campaign-card {
-        max-width: 900px;
-        padding: 40px 40px;
-      }
-      .image-strip-slot,
-      .image-strip-placeholder {
-        width: clamp(160px, 22vw, 280px);
-      }
-      .campaign-card--earlier .image-strip-slot,
-      .campaign-card--earlier .image-strip-placeholder {
-        width: clamp(120px, 18vw, 220px);
-      }
-
-      /* PROOF STRIP */
-      .proof-inner { max-width: 900px; }
-      .outlet-grid { grid-template-columns: repeat(4, 1fr); }
-
-      /* ABOUT — text-only layout (CR-011) */
-      .about-inner {
-        max-width: 900px;
-      }
-      .about-header {
-        padding: 44px 48px 12px;
-      }
-      .about-text {
-        padding: 0 48px 44px;
-      }
-
-      /* CONTACT */
-      .contact-inner { max-width: 680px; }
-      .contact-buttons {
-        display: flex;
-        flex-direction: row;
-        gap: 14px;
-      }
-      .btn {
-        display: inline-block;
-        width: auto;
-        min-width: 220px;
-      }
-      .btn-secondary { margin-top: 0; line-height: 45px; }
-
-      /* FOOTER */
-      .footer-inner { max-width: 1100px; }
-    }
-
-    @media (min-width: 1024px) {
-      .hero-text {
-        padding: 80px 64px 80px 64px;
-      }
-      .hero-name {
-        font-size: clamp(3rem, 3.6vw, 4.5rem);
-      }
-      .philosophy-quote {
-        font-size: clamp(1rem, 1.4vw, 1.2rem);
-      }
-    }
-
-    /* ─── FADE-IN ANIMATION ───────────────────────────────── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-
-    .fade-up.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pallavi Siddhanta — Policy & Communications</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --ink:          #0f0f0d;
+  --ink-mid:      #2a2820;
+  --ink-soft:     #5a5548;
+  --cream:        #f5f0e6;
+  --cream-dark:   #ede6d8;
+  --cream-deeper: #e2d9c8;
+  --green:        #2d4a2d;
+  --green-mid:    #3d5e3d;
+  --green-soft:   #7a9a6a;
+  --green-pale:   #c8d8c0;
+  --rule:         #d8d0c0;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--ink);
+  padding: 0 56px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.nav-logo {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: var(--cream);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+}
+.nav-links { display: flex; gap: 32px; list-style: none; }
+.nav-links a {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--cream); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--ink);
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  min-height: calc(100vh - 52px);
+  max-height: 900px;
+}
+.hero-text {
+  padding: 80px 64px 80px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.hero-text::before {
+  content: 'PS';
+  position: absolute;
+  top: 40px; left: 72px;
+  font-family: 'Source Serif 4', serif;
+  font-weight: 600;
+  font-size: 10rem;
+  color: rgba(255,255,255,0.03);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.hero-eyebrow {
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px; height: 1px;
+  background: var(--green-soft);
+}
+.hero-name {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(3rem, 6vw, 5rem);
+  line-height: 0.96;
+  letter-spacing: -0.025em;
+  color: var(--cream);
+  margin-bottom: 40px;
+}
+.hero-quote {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  color: rgba(245,240,230,0.65);
+  max-width: 460px;
+  margin-bottom: 36px;
+  padding-left: 20px;
+  border-left: 1px solid var(--green-mid);
+}
+.hero-bridge {
+  font-weight: 300;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  color: rgba(245,240,230,0.5);
+  max-width: 400px;
+  margin-bottom: 48px;
+}
+.hero-actions { display: flex; gap: 14px; }
+.btn-primary {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--green-soft);
+  padding: 13px 28px;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: background 0.15s;
+}
+.btn-primary:hover { background: var(--green-pale); }
+.btn-secondary {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  text-decoration: none;
+  border: 1px solid var(--green-mid);
+  padding: 13px 28px;
+  border-radius: 2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.btn-secondary:hover { color: var(--cream); border-color: var(--green-soft); }
+.hero-portrait {
+  position: relative;
+  overflow: hidden;
+}
+.hero-portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  filter: grayscale(15%) contrast(1.05);
+}
+.hero-portrait::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, var(--ink) 0%, transparent 30%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── BRIDGE ── */
+.bridge {
+  background: var(--green);
+  padding: 52px 80px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.bridge-line {
+  width: 1px; height: 48px;
+  background: var(--green-soft);
+  flex-shrink: 0;
+}
+.bridge-text {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  line-height: 1.5;
+  color: #e8f0e4;
+}
+.bridge-text strong {
+  font-weight: 600;
+  font-style: normal;
+  color: #fff;
+}
+
+/* ── SECTION HEADER ── */
+.section-hdr {
+  padding: 56px 80px 36px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.section-hdr-label {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  white-space: nowrap;
+}
+.section-hdr-rule {
+  flex: 1; height: 1px;
+  background: var(--rule);
+}
+
+/* ── CAMPAIGNS ── */
+.campaigns { padding: 0 80px 80px; }
+
+.campaign {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 64px;
+  padding: 56px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: start;
+}
+.campaign:last-child { border-bottom: none; }
+
+.c-eyebrow {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  margin-bottom: 12px;
+}
+.c-title {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.2vw, 2rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.c-org {
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 28px;
+}
+.c-block { margin-bottom: 18px; }
+.c-label {
+  font-size: 0.5625rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--green);
+  margin-bottom: 5px;
+}
+.c-text {
+  font-weight: 300;
+  font-size: 0.9375rem;
+  line-height: 1.72;
+  color: var(--ink-mid);
+}
+.c-divider {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 24px 0;
+}
+.c-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+.c-pill {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green);
+  border: 1px solid var(--green-pale);
+  padding: 5px 10px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+.c-pill:hover { background: var(--green); color: var(--cream); }
+
+/* ════════════════════════════════
+   PEEK CAROUSEL
+   — multiple cards visible, partial
+     next card signals scrollability
+════════════════════════════════ */
+.carousel {
+  /* overflow visible so peek card shows */
+  overflow: hidden;
+  position: relative;
+  /* clip only on top/bottom, let right peek through */
+  -webkit-mask-image: linear-gradient(to right, black 85%, transparent 100%);
+  mask-image: linear-gradient(to right, black 85%, transparent 100%);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 2px; /* prevent clip of box-shadow */
+  cursor: grab;
+}
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track.grabbing { cursor: grabbing; }
+
+/* each card snaps into place */
+.carousel-slide {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--cream-deeper);
+}
+
+/* photo slide */
+.carousel-slide img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* text card slide — matches the screenshot style */
+.carousel-slide.text-card {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 28px;
+  background: var(--cream-deeper);
+  text-align: center;
+  gap: 16px;
+}
+.card-title {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+  line-height: 1.2;
+  color: var(--ink);
+}
+.card-sub {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.8125rem;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.card-swipe-hint {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  margin-top: 4px;
+}
+
+/* pending slide */
+.carousel-slide.pending {
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream-deeper);
+}
+.carousel-slide.pending span {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--rule);
+}
+
+/* dot indicators — sit below the track */
+.carousel-dots {
+  display: flex;
+  gap: 6px;
+  margin-top: 14px;
+  padding-left: 2px;
+}
+.dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--rule);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.dot.active {
+  background: var(--green);
+  transform: scale(1.3);
+}
+
+/* ── PRESS SECTION ── */
+.press-section {
+  background: var(--ink);
+  padding: 56px 80px;
+}
+.press-lbl {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  margin-bottom: 28px;
+}
+.press-logos { display: flex; flex-wrap: wrap; gap: 10px; }
+.press-logo {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: rgba(245,240,230,0.45);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 9px 18px;
+  border-radius: 2px;
+  transition: color 0.15s, border-color 0.15s;
+}
+.press-logo:hover { color: var(--cream); border-color: var(--green-soft); }
+
+/* ── ABOUT ── */
+.about {
+  padding: 80px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 72px;
+  align-items: start;
+  background: var(--cream-dark);
+}
+.about img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+.about-eyebrow {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  margin-bottom: 16px;
+}
+.about-name {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 1.05;
+  color: var(--ink);
+  margin-bottom: 28px;
+}
+.about-bio {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--ink-mid);
+  max-width: 520px;
+}
+
+/* ── CONTACT ── */
+.contact {
+  background: var(--green);
+  padding: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+.contact-eyebrow {
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  margin-bottom: 16px;
+}
+.contact-heading {
+  font-family: 'Source Serif 4', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.05;
+  color: var(--cream);
+  margin-bottom: 16px;
+}
+.contact-sub {
+  font-weight: 300;
+  font-size: 0.9375rem;
+  color: var(--green-pale);
+  line-height: 1.7;
+}
+.contact-btns { display: flex; flex-direction: column; gap: 12px; }
+.contact-btn {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  border: 1px solid var(--green-mid);
+  padding: 16px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 2px;
+  transition: background 0.15s, border-color 0.15s;
+}
+.contact-btn:hover { background: var(--green-mid); border-color: var(--green-soft); }
+.contact-btn span { opacity: 0.4; }
+
+footer {
+  background: var(--ink-mid);
+  padding: 18px 80px;
+  display: flex;
+  justify-content: space-between;
+}
+footer p {
+  font-size: 0.625rem;
+  font-weight: 300;
+  color: rgba(245,240,230,0.25);
+  letter-spacing: 0.06em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .hero { grid-template-columns: 1fr; max-height: none; }
+  .hero-portrait { height: 300px; }
+  .hero-portrait::before { background: linear-gradient(to bottom, var(--ink) 0%, transparent 50%); }
+  .hero-text { padding: 40px 28px; }
+  .bridge { padding: 40px 28px; flex-wrap: wrap; gap: 20px; }
+  .section-hdr { padding: 40px 28px 24px; }
+  .campaigns { padding: 0 28px 60px; }
+  .campaign { grid-template-columns: 1fr; gap: 36px; }
+  .press-section { padding: 48px 28px; }
+  .about { grid-template-columns: 1fr; padding: 48px 28px; gap: 32px; }
+  .about img { aspect-ratio: 4/3; max-height: 280px; }
+  .contact { grid-template-columns: 1fr; padding: 48px 28px; gap: 36px; }
+  footer { padding: 16px 28px; flex-direction: column; gap: 6px; text-align: center; }
+}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav id="main-nav" aria-label="Primary navigation">
-    <div class="nav-inner">
-      <a href="#hero" class="nav-name"><span class="nav-name-short">PS</span><span class="nav-name-full">Pallavi Siddhanta</span></a>
-      <ul class="nav-links">
-        <li><a href="#campaigns">Work</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+<!-- NAV -->
+<nav id="hero">
+  <a href="#hero" class="nav-logo">Pallavi Siddhanta</a>
+  <ul class="nav-links">
+    <li><a href="#campaigns">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Policy &amp; Communications · Economic &amp; Social Equity</div>
+    <h1 class="hero-name">Pallavi<br>Siddhanta</h1>
+    <blockquote class="hero-quote">"In a world so mired in chaos, I believe that intentional policy action combined with transparent public dialogue will pave the way for a more inclusive, more sustainable future."</blockquote>
+    <p class="hero-bridge">I craft narratives and communications infrastructures that make policy accessible to populations.</p>
+    <div class="hero-actions">
+      <a href="#campaigns" class="btn-primary">See the work</a>
+      <a href="#contact" class="btn-secondary">Get in touch</a>
     </div>
-  </nav>
+  </div>
+  <div class="hero-portrait">
+    <img src="collection/image01.jpg" alt="Pallavi Siddhanta">
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section id="hero" aria-label="Introduction">
-    <div class="hero-photo-wrap">
-      <img
-        src="collection/image01.jpg"
-        alt="Pallavi Siddhanta"
-        class="hero-photo"
-      >
-      <div class="hero-photo-fade" aria-hidden="true"></div>
-    </div>
-    <div class="hero-text">
-      <h1 class="hero-name">Pallavi<br>Siddhanta</h1>
-      <p class="hero-credentials">Policy &amp; Communications&nbsp;·&nbsp;Economic &amp; Social Equity</p>
-      <blockquote class="philosophy-quote" style="margin-top:24px;font-size:clamp(0.85rem,1.4vw,1rem);opacity:0.85;">"In a world so mired in chaos, I believe that intentional policy action combined with transparent public dialogue will pave the way for a more inclusive, more sustainable future."</blockquote>
-      <p class="philosophy-bridge" style="margin-top:14px;font-size:13px;">I craft narratives and communications infrastructures that make policy accessible to populations.</p>
-    </div>
-  </section>
+<!-- BRIDGE -->
+<div class="bridge">
+  <div class="bridge-line"></div>
+  <p class="bridge-text">From Chicago's streets to India's highways — <strong>here's what building the narrative looks like in practice.</strong></p>
+</div>
 
-  <div class="section-divider" aria-hidden="true"></div>
+<!-- SELECTED CAMPAIGNS -->
+<div class="section-hdr" id="campaigns">
+  <span class="section-hdr-label">Selected Campaigns</span>
+  <div class="section-hdr-rule"></div>
+</div>
 
-  <!-- CAMPAIGNS -->
-  <section id="campaigns" aria-label="Work">
-    <div class="campaigns-header">
-      <span class="section-label fade-up">Work</span>
-    </div>
+<div class="campaigns">
 
-    <!-- Campaign 01 -->
-    <article class="campaign-card fade-up" aria-label="Campaign 01: Harm Reduction is Public Health">
-      <span class="campaign-tag">Campaign 01 · 2024–2025</span>
-      <h2 class="campaign-title">Harm Reduction<br>is Public Health</h2>
-      <span class="campaign-client">Chicago Department of Public Health</span>
-
-      <div class="image-strip" role="img" aria-label="Campaign 01 visuals">
-        <div class="image-strip-slot">
-          <img src="collection/430d0348.jpg" alt="What's Back in 2025? Healing Arts — gradient brand launch visual" loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/c5f36f95.jpg" alt="Flow with Arts. Heal with Arts. — transit shelter OOH, State Street, downtown Chicago" loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/8c7a95e5.jpg" alt="Please Be Safe — purple harm reduction poster (Test your drugs / Carry Narcan / MAR)" loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/e24b749b.jpg" alt="Recovery from Opioid Use is a Phone Call Away — MAR billboard in-situ at Halsted Ave and 56th St" loading="lazy">
-        </div>
-      </div>
-
-      <div class="story-arc">
-        <div class="arc-row">
-          <span class="arc-label">Challenge</span>
-          <p class="arc-text">Chicago needed to shift public narrative around harm reduction — a politically contested approach — while building durable infrastructure for ongoing seasonal crisis response.</p>
-        </div>
-        <div class="arc-row">
-          <span class="arc-label">Approach</span>
-          <p class="arc-text">Built the full communications stack: visual identity for arts therapy clinics at City-run mental health facilities; billboard campaigns using City-owned advertising assets; proactive and reactive media strategy for opioid spike events including Health Alert Network (HAN) response.</p>
-        </div>
-        <div class="arc-row">
-          <span class="arc-label">Outcome</span>
-          <p class="arc-text">Chicago opioid overdose deaths fell (continued drop from 2023). $18M in Illinois funding secured for overdose prevention sites. National and local media coverage.</p>
-        </div>
-      </div>
-
-      <div class="coverage-pills" aria-label="Media coverage">
-        <a class="pill" href="https://www.chicagotribune.com/2024/10/03/chicago-sees-steep-drop-in-number-of-deaths-tied-to-opioid-overdoses/" target="_blank" rel="noopener noreferrer">Chicago Tribune</a>
-        <a class="pill" href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" target="_blank" rel="noopener noreferrer">The Guardian</a>
-        <a class="pill" href="https://www.chicagobusiness.com/health-care/chicagos-opioid-efforts-show-early-promise" target="_blank" rel="noopener noreferrer">Crain's</a>
-        <a class="pill" href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" target="_blank" rel="noopener noreferrer">NBC</a>
-        <a class="pill" href="https://abc7chicago.com/post/increase-opioid-drug-overdose-incidents-during-hot-chicago-weather-triggers-citys-spike-alert-system/16839955/" target="_blank" rel="noopener noreferrer">ABC7</a>
-        <a class="pill" href="https://chicago.suntimes.com/the-watchdogs/2025/01/30/illinois-overdose-prevention-sites-18-million-dollars" target="_blank" rel="noopener noreferrer">Sun-Times</a>
-        <a class="pill" href="https://www.fox32chicago.com/video/1659027" target="_blank" rel="noopener noreferrer">Fox32</a>
-      </div>
-    </article>
-
-    <!-- Campaign 02 -->
-    <article class="campaign-card fade-up" aria-label="Campaign 02: Violence Prevention Chicago 2025">
-      <span class="campaign-tag">Campaign 02 · 2025</span>
-      <h2 class="campaign-title">Violence Prevention,<br>Chicago 2025</h2>
-      <span class="campaign-client">Chicago Department of Public Health</span>
-
-      <div class="image-strip" role="img" aria-label="Campaign 02 visuals">
-        <div class="image-strip-slot">
-          <img src="collection/image03.jpg" alt="Here are the Facts — gun safety stats infographic, chicago.gov/gunsafety" loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/29df86a6.jpg" alt="Heat and violence prevention social graphic — environmental triggers for conflict escalation, chicago.gov/gunsafety" loading="lazy">
-        </div>
-        <div class="image-strip-placeholder">
-          <span class="placeholder-label">Image<br>Pending</span>
-        </div>
-      </div>
-
-      <div class="campaign-narrative">
-        <p>Chicago's July Fourth weekend is a ritual data point — a morbid annual benchmark that journalists, officials, and advocates all watch. In 2024, the city recorded 105 shooting victims over that weekend. In 2025: 60. Through the first half of 2025, shooting victims were running at nearly half the pace of the year prior.</p>
-        <p>These numbers don't explain themselves. Violence had been declining nationally, but Chicago's curve bent in a particular direction — and the through-line leads back to sustained investment in community violence intervention. Since 2021, over $350 million in public funding has flowed into CVI programs: street outreach workers, credible messengers, youth peacekeepers deployed to the neighborhoods where violence concentrates. The theory wasn't new. The money made it real.</p>
-        <p>My role was to help translate that investment into a story that could travel — shaping the data into narrative, and placing it with outlets like The Trace that cover this space with the seriousness it demands. The reporting didn't just reflect the trend. It traced what caused it.</p>
-      </div>
-
-      <div class="coverage-pills" aria-label="Media coverage">
-        <a class="pill" href="https://www.thetrace.org/2025/07/chicago-shootings-july-fourth-holiday/" target="_blank" rel="noopener noreferrer">The Trace</a>
-        <a class="pill" href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" target="_blank" rel="noopener noreferrer">NBC Universal</a>
-        <a class="pill" href="https://chicago.suntimes.com/health/2025/07/25/mental-health-crisis-911-calls-care-programec-crisis-assistance-response-engagement-medill-investigative-lab-chicago-mindsite-news" target="_blank" rel="noopener noreferrer">Sun-Times</a>
-        <a class="pill" href="https://southsideweekly.com/expiring-federal-funds-threaten-chicagos-alternative-crisis-response-effort/" target="_blank" rel="noopener noreferrer">South Side Weekly</a>
-        <a class="pill" href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" target="_blank" rel="noopener noreferrer">The Guardian</a>
-      </div>
-    </article>
-
-    <!-- Campaign 03 -->
-    <article class="campaign-card fade-up" aria-label="Campaign 03: Centering Women Workers During COVID-19">
-      <span class="campaign-tag">Campaign 03 · 2020–2021</span>
-      <h2 class="campaign-title">Centering Women Workers<br>During COVID-19</h2>
-      <span class="campaign-client">SEWA Bharat, India</span>
-
-      <div class="image-strip" role="img" aria-label="Campaign 03 visuals">
-        <div class="image-strip-slot">
-          <img src="collection/60c6dd3e.jpg" alt="Women in a computer classroom, SEWA Bharat" loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/06cc814e.jpg" alt="COVID-19's impact on Grassroots Social Enterprises — SEWA research" loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/c052e328.jpg" alt="Gendered precarity of the lockdown — SEWA research finding" loading="lazy">
-        </div>
-      </div>
-
-      <div class="story-arc">
-        <div class="arc-row">
-          <span class="arc-label">Challenge</span>
-          <p class="arc-text">During COVID-19, India's informal women workers — domestic workers, textile recyclers, street vendors — were invisible in the policy conversation. Their economic and social needs were unaddressed in mainstream media.</p>
-        </div>
-        <div class="arc-row">
-          <span class="arc-label">Approach</span>
-          <p class="arc-text">Built a grassroots communications campaign centering workers' voices. Produced social media content and placed stories with feminist media, development sector publications, and national newspapers in India.</p>
-        </div>
-        <div class="arc-row">
-          <span class="arc-label">Outcome</span>
-          <p class="arc-text">Coverage in national and sector-leading publications elevated policy visibility for domestic workers and textile recyclers. Stories published in Feminism in India, Times of India, and India Development Review.</p>
-        </div>
-      </div>
-
-      <div class="coverage-pills" aria-label="Media coverage">
-        <a class="pill" href="https://timesofindia.indiatimes.com/women-textile-recyclers-even-reuse-tiny-fragments-sustaining-ecology-and-economy/articleshow/84483375.cms" target="_blank" rel="noopener noreferrer">Times of India</a>
-        <a class="pill" href="https://feminisminindia.com/2021/04/08/women-collective-informal-sector/" target="_blank" rel="noopener noreferrer">Feminism in India</a>
-        <a class="pill" href="https://idronline.org/article/rights/securing-economic-and-social-rights-for-domestic-workers/" target="_blank" rel="noopener noreferrer">India Dev Review</a>
-      </div>
-    </article>
-
-    <!-- Campaign 04 -->
-    <article class="campaign-card campaign-card--earlier fade-up" aria-label="Campaign 04: The SunPedal Ride">
-      <span class="campaign-tag">Earlier Work · 2019</span>
-      <h2 class="campaign-title">The SunPedal Ride</h2>
-      <span class="campaign-client">Clean Energy Communications · India</span>
-
-      <img src="collection/sunpedal-hero.jpg"
-           alt="Children riding in the solar-powered auto-rickshaw during the SunPedal Ride"
-           style="width:100%;height:auto;display:block;border-radius:4px;margin-bottom:18px;"
-           loading="lazy">
-
-      <div class="image-strip" role="img" aria-label="SunPedal Ride coverage">
-        <div class="image-strip-slot">
-          <img src="collection/sunpedal-rajasthan.jpg"
-               alt="Women in colourful saris watch the solar rickshaw pass on a Rajasthan highway"
-               loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/sunpedal-windturbines.jpg"
-               alt="Solar rickshaw parked with wind turbines on the hills behind"
-               loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/sunpedal-sunset.jpg"
-               alt="Solar rickshaw at sunset beside a lake"
-               loading="lazy">
-        </div>
-        <div class="image-strip-slot">
-          <img src="collection/sunpedal-highway.jpg"
-               alt="The solar rickshaw on the Golden Quadrilateral highway"
-               loading="lazy">
-        </div>
-      </div>
-
-      <div class="campaign-narrative">
-        <p>In the summer of 2019, 4 of us traveled along India's Golden Quadrilateral Highways on a retrofitted solar-powered electric auto-rickshaw (tuk-tuk) and a support vehicle, for 60 days and 6,000 kilometers. We spent 60 nights in different cities and towns of India, and needed all the help we could get from locals for our journey. We spent our time engaging with area locals, discussing clean energy and climate change, met policymakers and practitioners across India, eating local food, finding places of interest throughout the route, in the full blast of the Indian summer.</p>
-      </div>
-
-      <div class="coverage-pills" aria-label="Media coverage">
-        <a class="pill" href="https://www.thehindu.com/life-and-style/travel/60-cities-in-60-days-in-a-solar-powered-auto/article28707202.ece" target="_blank" rel="noopener noreferrer">The Hindu</a>
-        <a class="pill" href="https://www.newindianexpress.com/cities/delhi/2019/Jul/01/iitian-pedal-towards-a-clean-energy-practice-1997733.html" target="_blank" rel="noopener noreferrer">New Indian Express</a>
-        <a class="pill" href="https://yourstory.com/socialstory/2019/07/iit-bombay-alumnus-solar-powered-auto-rickshaw" target="_blank" rel="noopener noreferrer">YourStory</a>
-        <a class="pill" href="https://www.telegraphindia.com/jharkhand/green-drive-in-solar-auto/cid/1693799" target="_blank" rel="noopener noreferrer">Telegraph India</a>
-        <a class="pill" href="https://www.hec.edu/en/school/news/sasi-student-aims-revolutionize-india-s-energy" target="_blank" rel="noopener noreferrer">HEC Paris</a>
-        <a class="pill" href="https://www.edexlive.com/news/green-ride-this-group-is-on-a-mission-to-travel-across-the-country-on-a-solar-powered-auto-rickshaw-6775.html" target="_blank" rel="noopener noreferrer">EdexLive</a>
-        <a class="pill" href="https://climatesamurai.com/2019/05/16/sunpedal-ride-golden-quadrilateral-a-journey-on-solar-powered-e-rickshaw/" target="_blank" rel="noopener noreferrer">Climate Samurai</a>
-      </div>
-    </article>
-  </section>
-
-  <!-- PROOF STRIP -->
-  <section id="proof" aria-label="Media appearances">
-    <div class="proof-inner">
-      <span class="section-label">As seen in</span>
-      <div class="outlet-grid fade-up">
-        <a class="outlet-tile" href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" target="_blank" rel="noopener noreferrer">The Guardian</a>
-        <a class="outlet-tile" href="https://www.chicagotribune.com/2024/10/03/chicago-sees-steep-drop-in-number-of-deaths-tied-to-opioid-overdoses/" target="_blank" rel="noopener noreferrer">Chicago Tribune</a>
-        <a class="outlet-tile" href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" target="_blank" rel="noopener noreferrer">NBC Universal</a>
-        <a class="outlet-tile" href="https://www.chicagobusiness.com/health-care/chicagos-opioid-efforts-show-early-promise" target="_blank" rel="noopener noreferrer">Crain's Chicago</a>
-        <a class="outlet-tile" href="https://abc7chicago.com/post/increase-opioid-drug-overdose-incidents-during-hot-chicago-weather-triggers-citys-spike-alert-system/16839955/" target="_blank" rel="noopener noreferrer">ABC7</a>
-        <a class="outlet-tile" href="https://www.thetrace.org/2025/07/chicago-shootings-july-fourth-holiday/" target="_blank" rel="noopener noreferrer">The Trace</a>
-        <a class="outlet-tile" href="https://timesofindia.indiatimes.com/women-textile-recyclers-even-reuse-tiny-fragments-sustaining-ecology-and-economy/articleshow/84483375.cms" target="_blank" rel="noopener noreferrer">Times of India</a>
-        <a class="outlet-tile" href="https://chicago.suntimes.com/the-watchdogs/2025/01/30/illinois-overdose-prevention-sites-18-million-dollars" target="_blank" rel="noopener noreferrer">Sun-Times</a>
+  <!-- Campaign 01 -->
+  <article class="campaign">
+    <div>
+      <div class="c-eyebrow">Campaign 01 · 2024–2025</div>
+      <h2 class="c-title">Harm Reduction<br>is Public Health</h2>
+      <div class="c-org">Chicago Department of Public Health</div>
+      <div class="c-block"><div class="c-label">Challenge</div><p class="c-text">Chicago needed to shift public narrative around harm reduction — a politically contested approach — while building durable infrastructure for ongoing seasonal crisis response.</p></div>
+      <div class="c-block"><div class="c-label">Approach</div><p class="c-text">Built the full communications stack: visual identity for arts therapy clinics at City-run mental health facilities; billboard campaigns using City-owned advertising assets; proactive and reactive media strategy for opioid spike events including Health Alert Network (HAN) response.</p></div>
+      <div class="c-block"><div class="c-label">Outcome</div><p class="c-text">Chicago opioid overdose deaths fell. $18M in Illinois funding secured for overdose prevention sites. National and local media coverage.</p></div>
+      <hr class="c-divider">
+      <div class="c-pills">
+        <a href="https://www.chicagotribune.com/2024/10/03/chicago-sees-steep-drop-in-number-of-deaths-tied-to-opioid-overdoses/" class="c-pill">Chicago Tribune</a>
+        <a href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" class="c-pill">The Guardian</a>
+        <a href="https://www.chicagobusiness.com/health-care/chicagos-opioid-efforts-show-early-promise" class="c-pill">Crain's</a>
+        <a href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" class="c-pill">NBC</a>
+        <a href="https://abc7chicago.com/post/increase-opioid-drug-overdose-incidents-during-hot-chicago-weather-triggers-citys-spike-alert-system/16839955/" class="c-pill">ABC7</a>
+        <a href="https://chicago.suntimes.com/the-watchdogs/2025/01/30/illinois-overdose-prevention-sites-18-million-dollars" class="c-pill">Sun-Times</a>
+        <a href="https://www.fox32chicago.com/video/1659027" class="c-pill">Fox32</a>
       </div>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" aria-label="About Pallavi">
-    <div class="about-inner">
-      <div class="about-header">
-        <span class="section-label fade-up">About</span>
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="collection/430d0348.jpg" alt="Healing Arts brand launch visual">
+        </div>
+        <div class="carousel-slide text-card">
+          <div class="card-title">Flow with Arts.<br>Heal with Arts.</div>
+          <div class="card-sub">Transit shelter OOH campaign, State Street, downtown Chicago</div>
+          <div class="card-swipe-hint">Swipe to see more →</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/c5f36f95.jpg" alt="Transit shelter OOH, State Street">
+        </div>
+        <div class="carousel-slide text-card">
+          <div class="card-title">Please Be Safe</div>
+          <div class="card-sub">Harm reduction poster — Test your drugs · Carry Narcan · MAR</div>
+          <div class="card-swipe-hint">Swipe to see more →</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/8c7a95e5.jpg" alt="Please Be Safe poster">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/e24b749b.jpg" alt="MAR billboard in-situ, Halsted & 56th">
+        </div>
       </div>
-      <div class="about-text fade-up">
-        <span class="about-name">Pallavi Siddhanta</span>
-        <p class="about-bio">Hello! I'm Pallavi, a communications programming professional from India, who now calls Chicago home. I live and breathe communications to make public policy accessible to the masses. Through my work, I aim to ensure that communities are well-informed, cared for, and can access services equitably.</p>
+      <div class="carousel-dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
       </div>
     </div>
-  </section>
+  </article>
 
-  <!-- CONTACT -->
-  <section id="contact" aria-label="Contact">
-    <div class="contact-inner">
-      <span class="section-label">Get in touch</span>
-      <h3 class="contact-headline">Let's work together.</h3>
-      <p class="contact-subtext">Open to collaborations, consulting, and conversations.</p>
-      <div class="contact-buttons">
-        <a href="mailto:psiddhanta@outlook.com" class="btn btn-primary">Send an email</a>
-        <a href="https://www.linkedin.com/in/psiddhanta/" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+  <!-- Campaign 02 -->
+  <article class="campaign">
+    <div>
+      <div class="c-eyebrow">Campaign 02 · 2025</div>
+      <h2 class="c-title">Violence Prevention,<br>Chicago 2025</h2>
+      <div class="c-org">Chicago Department of Public Health</div>
+      <p class="c-text" style="margin-bottom:18px">Chicago's July Fourth weekend is a ritual data point — a morbid annual benchmark that journalists, officials, and advocates all watch. In 2024, the city recorded 105 shooting victims over that weekend. In 2025: 60. Through the first half of 2025, shooting victims were running at nearly half the pace of the year prior.</p>
+      <p class="c-text" style="margin-bottom:18px">These numbers don't explain themselves. The through-line leads back to sustained investment in community violence intervention — over $350 million in public funding since 2021. My role was to help translate that investment into a story that could travel.</p>
+      <hr class="c-divider">
+      <div class="c-pills">
+        <a href="https://www.thetrace.org/2025/07/chicago-shootings-july-fourth-holiday/" class="c-pill">The Trace</a>
+        <a href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" class="c-pill">NBC Universal</a>
+        <a href="https://chicago.suntimes.com/health/2025/07/25/mental-health-crisis-911-calls-care-programec-crisis-assistance-response-engagement-medill-investigative-lab-chicago-mindsite-news" class="c-pill">Sun-Times</a>
+        <a href="https://southsideweekly.com/expiring-federal-funds-threaten-chicagos-alternative-crisis-response-effort/" class="c-pill">South Side Weekly</a>
+        <a href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" class="c-pill">The Guardian</a>
       </div>
     </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <p class="footer-copy">&copy; 2026 Pallavi Siddhanta</p>
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="collection/image03.jpg" alt="Here are the Facts — gun safety stats infographic">
+        </div>
+        <div class="carousel-slide text-card">
+          <div class="card-title">105 → 60</div>
+          <div class="card-sub">Shooting victims over July Fourth weekend, 2024 vs 2025</div>
+          <div class="card-swipe-hint">Swipe to see more →</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/29df86a6.jpg" alt="Heat and violence prevention social graphic">
+        </div>
+        <div class="carousel-slide pending">
+          <span>Image Pending</span>
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
     </div>
-  </footer>
+  </article>
 
-  <script>
-    // Nav: transparent → dark on scroll
-    const nav = document.getElementById('main-nav');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 60) {
-        nav.classList.add('scrolled');
-      } else {
-        nav.classList.remove('scrolled');
-      }
-    }, { passive: true });
+  <!-- Campaign 03 -->
+  <article class="campaign">
+    <div>
+      <div class="c-eyebrow">Campaign 03 · 2020–2021</div>
+      <h2 class="c-title">Centering Women Workers<br>During COVID-19</h2>
+      <div class="c-org">SEWA Bharat, India</div>
+      <div class="c-block"><div class="c-label">Challenge</div><p class="c-text">During COVID-19, India's informal women workers — domestic workers, textile recyclers, street vendors — were invisible in the policy conversation. Their economic and social needs were unaddressed in mainstream media.</p></div>
+      <div class="c-block"><div class="c-label">Approach</div><p class="c-text">Built a grassroots communications campaign centering workers' voices. Produced social media content and placed stories with feminist media, development sector publications, and national newspapers in India.</p></div>
+      <div class="c-block"><div class="c-label">Outcome</div><p class="c-text">Coverage elevated policy visibility for domestic workers and textile recyclers. Published in Feminism in India, Times of India, and India Development Review.</p></div>
+      <hr class="c-divider">
+      <div class="c-pills">
+        <a href="https://timesofindia.indiatimes.com/women-textile-recyclers-even-reuse-tiny-fragments-sustaining-ecology-and-economy/articleshow/84483375.cms" class="c-pill">Times of India</a>
+        <a href="https://feminisminindia.com/2021/04/08/women-collective-informal-sector/" class="c-pill">Feminism in India</a>
+        <a href="https://idronline.org/article/rights/securing-economic-and-social-rights-for-domestic-workers/" class="c-pill">India Dev Review</a>
+      </div>
+    </div>
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="collection/60c6dd3e.jpg" alt="Women in a computer classroom, SEWA Bharat">
+        </div>
+        <div class="carousel-slide text-card">
+          <div class="card-title">COVID-19's impact on Grassroots Social Enterprises</div>
+          <div class="card-sub">SEWA studied the staggering impact of the lockdown on women workers</div>
+          <div class="card-swipe-hint">Swipe to see what we found →</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/06cc814e.jpg" alt="COVID-19 impact on Grassroots Social Enterprises — SEWA research">
+        </div>
+        <div class="carousel-slide text-card">
+          <div class="card-title">Gendered precarity of the lockdown</div>
+          <div class="card-sub">SEWA studied the staggering impact of the lockdown on women workers</div>
+          <div class="card-swipe-hint">Swipe to see what we found →</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/c052e328.jpg" alt="Gendered precarity of the lockdown — SEWA research finding">
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
+    </div>
+  </article>
 
-    // Fade-up on scroll
-    const fadeEls = document.querySelectorAll('.fade-up');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+</div>
 
-    fadeEls.forEach(el => observer.observe(el));
-  </script>
+<!-- EARLIER WORK -->
+<div class="section-hdr">
+  <span class="section-hdr-label">Earlier Work</span>
+  <div class="section-hdr-rule"></div>
+</div>
+
+<div class="campaigns">
+  <article class="campaign">
+    <div>
+      <div class="c-eyebrow">Earlier Work · 2019</div>
+      <h2 class="c-title">The SunPedal Ride</h2>
+      <div class="c-org">Clean Energy Communications · India</div>
+      <p class="c-text" style="margin-bottom:0">In the summer of 2019, 4 of us traveled along India's Golden Quadrilateral Highways on a retrofitted solar-powered electric auto-rickshaw for 60 days and 6,000 kilometers — engaging locals, meeting policymakers, and building a sustained media strategy for clean energy advocacy across national, regional, and specialist outlets.</p>
+      <hr class="c-divider">
+      <div class="c-pills">
+        <a href="https://www.thehindu.com/life-and-style/travel/60-cities-in-60-days-in-a-solar-powered-auto/article28707202.ece" class="c-pill">The Hindu</a>
+        <a href="https://www.newindianexpress.com/cities/delhi/2019/Jul/01/iitian-pedal-towards-a-clean-energy-practice-1997733.html" class="c-pill">New Indian Express</a>
+        <a href="https://yourstory.com/socialstory/2019/07/iit-bombay-alumnus-solar-powered-auto-rickshaw" class="c-pill">YourStory</a>
+        <a href="https://www.telegraphindia.com/jharkhand/green-drive-in-solar-auto/cid/1693799" class="c-pill">Telegraph India</a>
+        <a href="https://www.hec.edu/en/school/news/sasi-student-aims-revolutionize-india-s-energy" class="c-pill">HEC Paris</a>
+        <a href="https://www.edexlive.com/news/green-ride-this-group-is-on-a-mission-to-travel-across-the-country-on-a-solar-powered-auto-rickshaw-6775.html" class="c-pill">EdexLive</a>
+        <a href="https://climatesamurai.com/2019/05/16/sunpedal-ride-golden-quadrilateral-a-journey-on-solar-powered-e-rickshaw/" class="c-pill">Climate Samurai</a>
+      </div>
+    </div>
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="collection/sunpedal-hero.jpg" alt="Children riding in the solar-powered auto-rickshaw">
+        </div>
+        <div class="carousel-slide text-card">
+          <div class="card-title">60 cities.<br>60 days.<br>6,000 km.</div>
+          <div class="card-sub">India's Golden Quadrilateral on a solar-powered auto-rickshaw</div>
+          <div class="card-swipe-hint">Swipe to follow the journey →</div>
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sunpedal-rajasthan.jpg" alt="Women in saris watch the solar rickshaw pass — Rajasthan">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sunpedal-windturbines.jpg" alt="Solar rickshaw with wind turbines">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sunpedal-sunset.jpg" alt="Solar rickshaw at sunset">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sunpedal-highway.jpg" alt="Solar rickshaw on the Golden Quadrilateral highway">
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
+    </div>
+  </article>
+</div>
+
+<!-- AS SEEN IN -->
+<section class="press-section">
+  <div class="press-lbl">As seen in</div>
+  <div class="press-logos">
+    <a href="https://www.theguardian.com/us-news/2025/jul/22/trump-cuts-overdose-deaths" class="press-logo">The Guardian</a>
+    <a href="https://www.chicagotribune.com/2024/10/03/chicago-sees-steep-drop-in-number-of-deaths-tied-to-opioid-overdoses/" class="press-logo">Chicago Tribune</a>
+    <a href="https://www.nbcchicago.com/news/local/chicago-sees-weekend-spike-in-opioid-overdoses-during-heatwave/3776364/" class="press-logo">NBC Universal</a>
+    <a href="https://www.chicagobusiness.com/health-care/chicagos-opioid-efforts-show-early-promise" class="press-logo">Crain's Chicago</a>
+    <a href="https://abc7chicago.com/post/increase-opioid-drug-overdose-incidents-during-hot-chicago-weather-triggers-citys-spike-alert-system/16839955/" class="press-logo">ABC7</a>
+    <a href="https://www.thetrace.org/2025/07/chicago-shootings-july-fourth-holiday/" class="press-logo">The Trace</a>
+    <a href="https://timesofindia.indiatimes.com/women-textile-recyclers-even-reuse-tiny-fragments-sustaining-ecology-and-economy/articleshow/84483375.cms" class="press-logo">Times of India</a>
+    <a href="https://chicago.suntimes.com/the-watchdogs/2025/01/30/illinois-overdose-prevention-sites-18-million-dollars" class="press-logo">Chicago Sun-Times</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <img src="collection/image01.jpg" alt="Pallavi Siddhanta">
+  <div>
+    <div class="about-eyebrow">About</div>
+    <h2 class="about-name">Pallavi Siddhanta</h2>
+    <p class="about-bio">Hello! I'm Pallavi, a communications programming professional from India, who now calls Chicago home. I live and breathe communications to make public policy accessible to the masses. Through my work, I aim to ensure that communities are well-informed, cared for, and can access services equitably.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div>
+    <div class="contact-eyebrow">Get in touch</div>
+    <h2 class="contact-heading">Let's work<br>together.</h2>
+    <p class="contact-sub">Open to collaborations, consulting, and conversations.</p>
+  </div>
+  <div class="contact-btns">
+    <a href="mailto:psiddhanta@outlook.com" class="contact-btn">Send an email <span>→</span></a>
+    <a href="https://www.linkedin.com/in/psiddhanta/" class="contact-btn">Connect on LinkedIn <span>→</span></a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Pallavi Siddhanta</p>
+  <p>Policy &amp; Communications · Chicago</p>
+</footer>
+
+<script>
+document.querySelectorAll('[data-carousel]').forEach(function(carousel) {
+  const track  = carousel.querySelector('.carousel-track');
+  const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+  const dots   = Array.from(carousel.querySelectorAll('.dot'));
+
+  // ── dot sync on scroll ──
+  function updateDots() {
+    const scrollLeft = track.scrollLeft;
+    const slideWidth = slides[0].offsetWidth + 12; // 12 = gap
+    const idx = Math.round(scrollLeft / slideWidth);
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === idx);
+    });
+  }
+  track.addEventListener('scroll', updateDots, { passive: true });
+
+  // ── dot click scrolls to slide ──
+  dots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() {
+      const slideWidth = slides[0].offsetWidth + 12;
+      track.scrollTo({ left: i * slideWidth, behavior: 'smooth' });
+    });
+  });
+
+  // ── mouse drag to scroll ──
+  let isDown = false, startX = 0, scrollStart = 0;
+  track.addEventListener('mousedown', function(e) {
+    isDown = true;
+    startX = e.pageX - track.offsetLeft;
+    scrollStart = track.scrollLeft;
+    track.classList.add('grabbing');
+  });
+  track.addEventListener('mouseleave', function() {
+    isDown = false;
+    track.classList.remove('grabbing');
+  });
+  track.addEventListener('mouseup', function() {
+    isDown = false;
+    track.classList.remove('grabbing');
+  });
+  track.addEventListener('mousemove', function(e) {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    track.scrollLeft = scrollStart - (x - startX);
+  });
+});
+</script>
 
 </body>
 </html>
