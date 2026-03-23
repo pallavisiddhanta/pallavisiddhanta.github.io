@@ -579,6 +579,59 @@ footer p {
   .contact { grid-template-columns: 1fr; padding: 48px 28px; gap: 36px; }
   footer { padding: 16px 28px; flex-direction: column; gap: 6px; text-align: center; }
 }
+
+/* ── Section org line ── */
+.section-org-line {
+  padding: 0 80px 8px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ── Section attribution ── */
+.section-attribution {
+  padding: 0 80px 48px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  max-width: 680px;
+  font-style: italic;
+}
+
+/* ── SEWA sub-entries — no campaign eyebrow, title only ── */
+.sewa-campaigns .campaign {
+  padding-top: 48px;
+}
+.sewa-campaigns .campaign:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+
+/* ── YouTube embed ── */
+.video-embed {
+  margin-top: 28px;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.video-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 2px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 960px) {
+  .section-org-line { padding: 0 28px 8px; }
+  .section-attribution { padding: 0 28px 40px; }
+}
 </style>
 </head>
 <body>
@@ -705,32 +758,103 @@ footer p {
     </div>
   </article>
 
-  <!-- Campaign 03 -->
+</div>
+
+<!-- ══ WOMEN'S ECONOMIC EMPOWERMENT ══ -->
+<div class="section-hdr">
+  <span class="section-hdr-label">Women's Economic Empowerment</span>
+  <div class="section-hdr-rule"></div>
+</div>
+
+<div class="section-org-line">SEWA Bharat, India · 2020–2021</div>
+
+<div class="section-attribution">
+  At SEWA Bharat, my role was to provide editorial direction, create and refine the brand voice, and to strategize the course of organizational communications. Graphics and visual production was most often undertaken or commissioned out by the specialists who worked with me.
+</div>
+
+<div class="campaigns sewa-campaigns">
+
+  <!-- Entry 1: Centering Women-run Enterprises -->
   <article class="campaign">
     <div>
-      <div class="c-eyebrow">Campaign 03 · 2020–2021</div>
-      <h2 class="c-title">Centering Women Workers<br>During COVID-19</h2>
-      <div class="c-org">SEWA Bharat, India</div>
-      <div class="c-block"><div class="c-label">Challenge</div><p class="c-text">During COVID-19, India's informal women workers — domestic workers, textile recyclers, street vendors — were invisible in the policy conversation. Their economic and social needs were unaddressed in mainstream media.</p></div>
-      <div class="c-block"><div class="c-label">Approach</div><p class="c-text">Built a grassroots communications campaign centering workers' voices. Produced social media content and placed stories with feminist media, development sector publications, and national newspapers in India.</p></div>
-      <div class="c-block"><div class="c-label">Outcome</div><p class="c-text">Coverage elevated policy visibility for domestic workers and textile recyclers. Published in Feminism in India, Times of India, and India Development Review.</p></div>
-      <hr class="c-divider">
-      <div class="c-pills">
-        <a href="https://timesofindia.indiatimes.com/women-textile-recyclers-even-reuse-tiny-fragments-sustaining-ecology-and-economy/articleshow/84483375.cms" class="c-pill">Times of India</a>
-        <a href="https://feminisminindia.com/2021/04/08/women-collective-informal-sector/" class="c-pill">Feminism in India</a>
-        <a href="https://idronline.org/article/rights/securing-economic-and-social-rights-for-domestic-workers/" class="c-pill">India Dev Review</a>
+      <h2 class="c-title">Centering Women-run Enterprises</h2>
+      <p class="c-text" style="margin-bottom:0">India's weavers and artisans, e-rickshaw drivers, street vendors, community banking agents, and farmers, have always been self-employed, running their own enterprises. My role was to build the communications practice that recognized women's informal work and made it visible, to advocate for their economic needs as entrepreneurs. This involved developing content styles centering women and their micro enterprises, mentoring my communications team to find a consistent voice, and creating the narrative infrastructure for ongoing storytelling across platforms.</p>
+    </div>
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="collection/sewa-rupali-behen.jpg" alt="Rupali behen — tant weaver, Phulia">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sewa-suman-behen.jpg" alt="Suman behen — e-rickshaw driver, New Delhi">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sewa-neelam-ben.jpg" alt="Neelam ben — SEWA SARTHAK, Pithoragarh, Uttarakhand">
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Entry 2: Mainstreaming Research and Advocacy -->
+  <article class="campaign">
+    <div>
+      <h2 class="c-title">Mainstreaming Research and Advocacy</h2>
+      <p class="c-text" style="margin-bottom:0">SEWA Bharat's policy research on women's economic empowerment was substantive, but under-consumed. I built the communications layer to move it outward: explainer content, social series, webinar campaigns, and advocacy materials that translated dense findings into arguments that could travel. Among others, this body of work included content for a joint UN Women and SEWA report on women's economic empowerment in informal economies. Eventually, my team produced a short film about women-run enterprises to open our parallel event at the UN Commission on the Status of Women 65, 2021.</p>
+      <div class="video-embed">
+        <iframe
+          src="https://www.youtube.com/embed/J7TRS91vCQA"
+          title="Short film — Women-run Enterprises, SEWA Bharat · CSW65 2021"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
     <div class="carousel" data-carousel>
       <div class="carousel-track">
         <div class="carousel-slide">
-          <img src="collection/60c6dd3e.jpg" alt="Women in a computer classroom, SEWA Bharat">
+          <img src="collection/sewa-unwomen-roadmap.jpg" alt="Roadmap for Women's Economic Empowerment — UN Women and SEWA Bharat">
         </div>
         <div class="carousel-slide">
-          <img src="collection/06cc814e.jpg" alt="COVID-19 impact on Grassroots Social Enterprises — SEWA research">
+          <img src="collection/sewa-digital-assets.jpg" alt="Impact of Digital Assets for women in the service sector">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/06cc814e.jpg" alt="COVID-19's impact on Grassroots Social Enterprises — SEWA research">
         </div>
         <div class="carousel-slide">
           <img src="collection/c052e328.jpg" alt="Gendered precarity of the lockdown — SEWA research finding">
+        </div>
+      </div>
+      <div class="carousel-dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
+    </div>
+  </article>
+
+  <!-- Entry 3: Relief Campaigns during Covid-19 -->
+  <article class="campaign">
+    <div>
+      <h2 class="c-title">Relief Campaigns during Covid-19</h2>
+      <p class="c-text" style="margin-bottom:0">When COVID-19 hit in 2020, SEWA Bharat mobilized fast, with health kits, food kits, volunteer doctors, and support for displaced workers across the federation's communities in India. My role was to build the communications infrastructure for that response: developing the brand voice for the relief campaign, mentoring the team that produced the materials, commissioning fast to external contributors, crowdsourcing 11 language translations, and ensuring that accurate messaging reached the people who could donate, volunteer, or act. The campaign reached approximately 588,000 women with relief information and goods across multiple COVID-19 waves.</p>
+    </div>
+    <div class="carousel" data-carousel>
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="collection/sewa-health-kit.jpg" alt="Health kit — contents for up to 30,000 families">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sewa-food-kit.jpg" alt="Food kit — contents for up to 30,000 families">
+        </div>
+        <div class="carousel-slide">
+          <img src="collection/sewa-volunteer-doctor.jpg" alt="Volunteer doctor programme — illustrated explainer">
         </div>
       </div>
       <div class="carousel-dots">
