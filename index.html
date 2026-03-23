@@ -355,6 +355,12 @@ nav {
   -webkit-user-drag: none;
 }
 
+/* SEWA illustrated/graphic images — show in full, don't crop */
+.sewa-campaigns .carousel-slide img {
+  object-fit: contain;
+  background: var(--cream-deeper);
+}
+
 /* text card slide — matches the screenshot style */
 .carousel-slide.text-card {
   aspect-ratio: 4 / 3;
@@ -610,6 +616,18 @@ footer p {
 .sewa-campaigns .campaign:first-child {
   padding-top: 0;
   border-top: none;
+}
+
+/* Remove border between SEWA sub-entries — they are not section breaks */
+.sewa-campaigns .campaign {
+  border-bottom: none;
+  padding-bottom: 56px;
+}
+
+/* Restore a single light rule only at the very end of the SEWA section */
+.sewa-campaigns .campaign:last-child {
+  padding-bottom: 0;
+  border-bottom: 1px solid var(--rule);
 }
 
 /* ── YouTube embed ── */
